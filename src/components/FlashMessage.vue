@@ -13,6 +13,7 @@
 		<!-- Dinamic component for message instance -->
 		<component
 			v-if="messageObj.componentName"
+      v-bind="templateData"
 			:is="messageObj.componentName"
 			:messageId="messageObj.id"
 		/>
@@ -53,7 +54,18 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+
+    }
+  },
+  computed: {
+    templateData() {
+      return { ...this.messageObj }
+    }
+  },
+};
 </script>
 
 <style lang="css">

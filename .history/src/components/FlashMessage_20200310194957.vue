@@ -63,12 +63,7 @@ export default {
   watch: {
     messageObj(value) {
       this.templateDataBinding = { ...value }
-      console.log('watched', { templateDataBinding: this.templateDataBinding })
     },
-  },
-  mounted() {
-    this.templateDataBinding = { ...this.messageObj }
-    console.log('mounted', { templateDataBinding: this.templateDataBinding })
   },
 };
 </script>

@@ -13,7 +13,7 @@
 		<!-- Dinamic component for message instance -->
 		<component
 			v-if="messageObj.componentName"
-      v-bind="templateDataBinding"
+      v-bind="templateData"
 			:is="messageObj.componentName"
 			:messageId="messageObj.id"
 		/>
@@ -57,18 +57,13 @@
 export default {
   data() {
     return {
-      templateDataBinding: {},
+
     }
   },
-  watch: {
-    messageObj(value) {
-      this.templateDataBinding = { ...value }
-      console.log('watched', { templateDataBinding: this.templateDataBinding })
-    },
-  },
-  mounted() {
-    this.templateDataBinding = { ...this.messageObj }
-    console.log('mounted', { templateDataBinding: this.templateDataBinding })
+  computed: {
+    templateData() {
+      return { ...this.messageObj }
+    }
   },
 };
 </script>

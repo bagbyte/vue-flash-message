@@ -64,6 +64,8 @@ export function createMessageMixin(config) {
         return this.messageObj.componentName
           ? this.messageObj.componentName
           : this.templateComponent
+            ? this.templateComponent
+            : false
       }
 		},
 

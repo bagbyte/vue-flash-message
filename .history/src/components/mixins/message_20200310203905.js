@@ -16,7 +16,7 @@ export function createMessageMixin(config) {
 				timeoutId: undefined, // id that will be returned by setTimeout() function
 				yAxis: 0,
         heightWithoutImage: 0,
-        templateComponent: config.templateComponent,
+        templateComponent: config.x,
 			};
 		},
 

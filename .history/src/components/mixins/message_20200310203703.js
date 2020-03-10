@@ -58,13 +58,7 @@ export function createMessageMixin(config) {
 					style[y] = `${this.yAxis}px`;
 					return style;
 				}
-      },
-
-      customComponent() {
-        return this.messageObj.componentName
-          ? this.messageObj.componentName
-          : this.templateComponent
-      }
+			}
 		},
 
 		methods: {

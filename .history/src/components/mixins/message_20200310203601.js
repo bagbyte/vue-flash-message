@@ -16,7 +16,7 @@ export function createMessageMixin(config) {
 				timeoutId: undefined, // id that will be returned by setTimeout() function
 				yAxis: 0,
         heightWithoutImage: 0,
-        templateComponent: config.templateComponent,
+        customTemplate: null,
 			};
 		},
 
@@ -58,13 +58,7 @@ export function createMessageMixin(config) {
 					style[y] = `${this.yAxis}px`;
 					return style;
 				}
-      },
-
-      customComponent() {
-        return this.messageObj.componentName
-          ? this.messageObj.componentName
-          : this.templateComponent
-      }
+			}
 		},
 
 		methods: {

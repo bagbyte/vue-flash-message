@@ -55,7 +55,25 @@
 
 <script>
 /* eslint-disable */
-export default {};
+export default {
+  data() {
+    return {
+      templateDataBinding: {
+        test: 'initial',
+      },
+    }
+  },
+  watch: {
+    messageObj(value) {
+      this.templateDataBinding = { ...value, test: 'watch' }
+      console.log('watched', { templateDataBinding: this.templateDataBinding })
+    },
+  },
+  mounted() {
+    this.templateDataBinding = { ...this.messageObj, test: 'mounted' }
+    console.log('mounted', { templateDataBinding: this.templateDataBinding })
+  },
+};
 </script>
 
 <style lang="css">

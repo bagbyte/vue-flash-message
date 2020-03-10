@@ -14,6 +14,8 @@
 		<component
 			v-if="messageObj.componentName"
       v-bind="templateDataBinding"
+      :test="'passed'"
+      :sabino="'the best'"
 			:is="messageObj.componentName"
 			:messageId="messageObj.id"
 		/>

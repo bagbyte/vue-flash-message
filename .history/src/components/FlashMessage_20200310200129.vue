@@ -14,6 +14,8 @@
 		<component
 			v-if="messageObj.componentName"
       v-bind="templateDataBinding"
+      :test="'passed'"
+      :sabino="'the best'"
 			:is="messageObj.componentName"
 			:messageId="messageObj.id"
 		/>
@@ -70,7 +72,7 @@ export default {
     },
   },
   mounted() {
-    this.templateDataBinding = { ...this.messageObj, test: 'mounted' }
+    this.templateDataBinding = { ...this.messageObj }
     console.log('mounted', { templateDataBinding: this.templateDataBinding })
   },
 };

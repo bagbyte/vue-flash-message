@@ -13,6 +13,7 @@
 		<!-- Dinamic component for message instance -->
 		<component
 			v-if="messageObj.componentName"
+			v-bind="messageObj"
 			:is="messageObj.componentName"
 			:messageId="messageObj.id"
 		/>
